@@ -42,7 +42,11 @@ Assume you have a linux box with singularity. To install [Singularity](http://si
   export SINGULARITYENV_OMP_NUM_THREADS=12
   mpirun -np 2 singularity exec --nv centos7-gnu-cuda9.img /home/jcchen/software/xhpcg-3.1.cuda9.x
   '''
-  
+ 
+ TIPS:
+ - Does Singularity support containers that require GPUs? Yes, try this magic but experimental --nv option. The option "--nv" allows you to leverage host GPUs without installing system level drivers into your container.
+ - If you intend to run the exising binary outside the container, you DO NOT NEED to install MPI. Howerver, if you would like to compile and install MPI programs within the container, you need to install it. You will need to make sure the correct drivers and libraries between host and container image. [See FAQ](http://singularity.lbl.gov/faq#why-do-we-call-mpirun-from-outside-the-container-rather-than-inside)
+ 
  References
  - http://singularity.lbl.gov/faq
  - http://singularity.lbl.gov/docs-exec#a-gpu-example 
