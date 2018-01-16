@@ -37,11 +37,11 @@ Assume you have a linux box with singularity. To install [Singularity](http://si
   singularity exec --nv centos7-gnu-cuda9.img which nvidia-smi
   ```
 - Example script to run HPCG by using container (24 CPU cores with 2 GPUs per node)
-  '''
+  ```
   export SINGULARITYENV_LD_LIBRARY_PATH=/home/jcchen/openmpi-1.10.7-cuda9-gnu4/lib:$SINGULARITYENV_LD_LIBRARY_PATH
   export SINGULARITYENV_OMP_NUM_THREADS=12
   mpirun -np 2 singularity exec --nv centos7-gnu-cuda9.img /home/jcchen/software/xhpcg-3.1.cuda9.x
-  '''
+  ```
  
  TIPS:
  - Does Singularity support containers that require GPUs? Yes, try this magic but experimental --nv option. The option "--nv" allows you to leverage host GPUs without installing system level drivers into your container.
