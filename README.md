@@ -83,3 +83,14 @@ chown jcchen:jcchen ubuntu1604-pandas.img
 ```
 singularity shell ubuntu1604-pandas.img
 ```
+7. Example of the bash sricpt to run python code by using the container image
+```
+#!/bin/bash
+if [ -n $1 ]
+then
+        singularity exec ubuntu1604-pandas.img python $1
+else
+        echo "Usage:$ ./run.sh RUN-my.py"
+fi
+```
+
