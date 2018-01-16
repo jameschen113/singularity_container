@@ -53,7 +53,7 @@ Assume you have a linux box with singularity. To install [Singularity](http://si
  - http://singularity.lbl.gov/docs-hpc 
  - http://singularity.lbl.gov/tutorial-gpu-drivers-open-mpi-mtls 
 
-## Create Ubuntu image on CentOS7 platform (in superuser mode)
+## Create Ubuntu image on CentOS7 platform (in the superuser mode)
 - Grab the image of Ubuntu 16.04 LTS and save it as the directory type
 ```
 singularity build --sandbox ubuntu16-pandas/ docker://ubuntu:xenial
@@ -70,7 +70,7 @@ export LC_ALL=C
 pip install --upgrade pip
 pip install pandas numpy scipy
 ```
-- Pack the directory to a single compressed image
+- Pack the working directory to a single compressed image
 ```
 singularity build ubuntu1604-pandas.img ubuntu16-pandas/
 ```
